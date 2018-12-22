@@ -1,171 +1,60 @@
-import time
+from time import sleep
 
-accountOwner = "Ridwan OLADIPUPO"
-userPin = 1234
+userPin =0000
 balance = 0
 
 def main():
-    print ("Welcome to Zenith Bank ATM")
-    pin = int(input("ENTER YOUR PIN"))
-    print("")
-    if (pin == userPin):
-        time.sleep(2)
-        initiateProcess()
+    balance = 0
+    print ("Welcom to RIDWAN ATM Machine")
+    pin = int(input("Enter Your Password"))
+    if(pin == userPin):
+        startMenu(balance)
     else:
-        print("Sorry, the PIN is not Correct")
-        main()
-  
+        print ("Invalid Password")
     
-def initiateProcess():
-    print ("1 >> Deposit")
-    print ("2 >> Withdraw")
-    print ("3 >> Check Balance")
-    print ("4 >> Pay Bill")
-    print ("5 >> Recharge")
-    print ("6 >> Exit")
-
-    optionv = int(input("Pls Select the Code"))
-
-    if(optionv == 1):
-        deposit()
-    elif(optionv == 2):
-        withdraw()
-    elif(optionv == 3):
-        checkBalance()
-    elif(optionv == 4):
-        payBill()
-    elif(optionv == 5):
-        Recharge()
-    elif(optionv == 6):
-        exitapp()
-    else:
-        initiateProcess()
+def startMenu(balance):
+    print ("1  >>Deposit         2  <<Withdraw")
+    print ("3  >>Recharge        4  <<Check Balance")
+    print ("5  >>PayBill         6  <<QuickTeller")
+    resp = int(input("Please enter Response"))
+    if(resp == 1):
+        balance = deposite(balance)
+    elif(resp == 2):
+        withdraw(balance)
+    elif(resp ==4):
+        print ("Your Current Balance is:",checkBalance(balance))
     
-
-def deposit(balance):
-    amounttodeposit = int(input("Enter Amount to Deposit"))
-    balance = balance + amounttodeposit
-    print("Pls Wait...")
-    time.sleep(2)
-    print ("Your Deposit of ",amounttodeposit, " has been Processed,Your New Balance = ",balance)
-
-
-def withdraw(balance):
-      amounttowithdraw = int(input("Enter Amount to Withdraw"))
-      print("Pls Wait...")
-      time.sleep(2)
-      if amounttowithdraw < balance:
-           print ("Pls take your Cash of ",amounttowithdraw)
-      else:
-            print("Sorry, your Balance is not Sufficient, Kindly Deposit Funds into your Account")
-            deposit()
-
-
-def checkBalance(balance):
-    print("Pls Wait...")
-    time.sleep(2)
-    print ("Your Balance is ",balance)
-
-def payBill(balance):
-    print("Print Select the Service/Vendor you want to Pay")
-    print("")
-    print ("1 >> Air Nigeria")
-    print ("2 >> DSTV")
-    print ("3 >> JAMB")
-    print ("4 >> AAUA")
-
-    optionv = int(input("Pls Select the Code for the Service/Vendor you want to pay :"))
-
-    if optionv == 1:
-        amounttoPay = int(input("Enter Amount to Pay to Air Nigeria"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoPay < balance:
-                print ("You have Paid the Sum of ",amounttoPay," to Air Nigeria")
-            else:
-                print("Sorry, your Balance is not Sufficient")
-
-    if optionv == 2:
-        amounttoPay = int(input("Enter Amount to Pay to DSTV"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoPay < balance:
-                print ("You have Paid the Sum of ",amounttoPay," to DSTV")
-            else:
-                print("Sorry, your Balance is not Sufficient")
-
-
-   if optionv == 3:
-        amounttoPay = int(input("Enter Amount to Pay to JAMB"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoPay < balance:
-                print ("You have Paid the Sum of ",amounttoPay," to JAMB")
-            else:
-                print("Sorry, your Balance is not Sufficient")
-
-   if optionv == 4:
-        amounttoPay = int(input("Enter Amount to Pay to AAUA"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoPay < balance:
-                print ("You have Paid the Sum of ",amounttoPay," to AAUA")
-            else:
-                print("Sorry, your Balance is not Sufficient")
+def deposite(balance):
+    amount = int(input("Enter Amount You wish to deposite"))
+    balance = balance + amount
+    opt = int(input("Do you want to perform Anothr Operation Enter 1 for yes and 0 for no"))
+    if(opt == 1):
+        startMenu(balance)
+    elif(opt ==0):
+        print("Thank You for using This ATM Machine")
+        sleep(3)
+        exit()
+    return balance
                 
-def Recharge(balance):
-    print("Print Select the Network Provider")
-    print("")
-    print ("1 >> AIRTEL")
-    print ("2 >> 9MOBILE")
-    print ("3 >> GLO")
-    print ("4 >> MTN")
-    print("")
+def withdraw(balance):
+    widthamount = int(input("Enter Amount to Withdraw"))
+    if(widthamount<balance):
+        balance = balance - widthamount
+        sleep(3)
+        print ("Take Your Cash")
+    else:
+        print ("Insufficient Fund")
+        opt = int(input("Do you want to perform Anothr Operation Enter 1 for yes and 0 for no"))
+    if(opt == 1):
+        startMenu(balance)
+    elif(opt ==0):
+        print("Thank You for using This ATM Machine")
+        sleep(3)
+        exit()
+    return balance
+def checkBalance(balance):
+    return balance
+main()
     
-    optionv = int(input("Pls Select the Code for the Network Provider"))
-
-    if optionv == 1 :
-        amounttoBuy = int(input("Enter Amount"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoBuy < balance:
-                print ("You have Purchase the Sum of ",amounttoBuy," Airtime")
-            else:
-                print("Sorry, your Balance is not Sufficient")
-
-    if optionv == 2:
-        amounttoBuy = int(input("Enter Amount"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoBuy < balance :
-                print ("You have Purchase the Sum of ",amounttoBuy," Airtime")
-            else:
-                print("Sorry, your Balance is not Sufficient")
-
-
-   if optionv == 3:
-        amounttoBuy = int(input("Enter Amount"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoBuy < balance:
-                print ("You have Purchase the Sum of ",amounttoBuy," Airtime")
-            else:
-                print("Sorry, your Balance is not Sufficient")
-
-   if optionv == 4 :
-        amounttoBuy = int(input("Enter Amount"))
-        print("Pls Wait...")
-        time.sleep(2)
-            if amounttoBuy < balance:
-                print ("You have Purchase the Sum of ",amounttoBuy," Airtime")
-            else:
-                print("Sorry, your Balance is not Sufficient")
-
-
-def exitapp():
-    main()
-        
-                 
-
     
     
