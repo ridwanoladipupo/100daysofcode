@@ -1,11 +1,11 @@
 from time import sleep
 
-userPin =0000
+userPin =0000 #Take note, use '0000' for the Pin
 balance = 0
 
 def main():
     balance = 0
-    print ("Welcom to RIDWAN ATM Machine")
+    print ("Welcome to RIDWAN ATM Machine")
     pin = int(input("Enter Your Password"))
     if(pin == userPin):
         startMenu(balance)
