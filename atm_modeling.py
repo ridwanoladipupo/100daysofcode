@@ -1,6 +1,6 @@
 import time
 
-accountOwner = "Mr Ajayi O"
+accountOwner = "Ridwan OLADIPUPO"
 userPin = 1234
 balance = 0
 
