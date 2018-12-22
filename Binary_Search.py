@@ -34,3 +34,4 @@ needle = int(input("Enter the number to search for: "))
 print("Initial Array = ",items)
 print("Number = ",needle)
 print("Search Result = ",search(items,needle,len(items)))
+>>>>>>> fe3f6c6feee6003e3b4b3bd3b7542a58fd030dca

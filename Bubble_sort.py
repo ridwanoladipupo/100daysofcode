@@ -29,3 +29,4 @@ print("\nInitial Array Elements: ", arr)
 bubbleSort(arr)
 
 print ("\nSorted array by bubble sort is: ", arr)
+>>>>>>> fe3f6c6feee6003e3b4b3bd3b7542a58fd030dca

@@ -29,3 +29,4 @@ compare = [store_a, store_b]
 print("a's point : ", store_a)
 print("b's point : ", store_b)
 print(compare)
+>>>>>>> fe3f6c6feee6003e3b4b3bd3b7542a58fd030dca
