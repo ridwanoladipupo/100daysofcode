@@ -56,16 +56,16 @@ class Date:
 
             formatoption = int(input(" Indicate your format option :"))
             if (formatoption == 1):
-                print(strftime("%m %d %y", gmtime()))
+                print(strftime("%m/%d/%y", gmtime()))
 
             elif (formatoption == 2):
-                print(strftime("%m %d %Y", gmtime()))
+                print(strftime("%m/%d/%Y", gmtime()))
 
             elif (formatoption == 3):
-                print(strftime("%d %m %y", gmtime()))
+                print(strftime("%d/%m/%y", gmtime()))
 
             elif (formatoption == 4):
-                print(strftime("%d %m %Y", gmtime()))
+                print(strftime("%d/%m/%Y", gmtime()))
 
             elif (formatoption == 5):
                 print(strftime("%b %d %Y", gmtime()))
@@ -81,16 +81,16 @@ class Date:
 
             formatoption = int(input(" Indicate your format option :"))
             if (formatoption == 1):
-                print(strftime("%m %d %y", gmtime(self.data)))
+                print(strftime("%m/%d/%y", gmtime(self.data)))
 
             elif (formatoption == 2):
-                print(strftime("%m %d %Y", gmtime(self.data)))
+                print(strftime("%m/%d/%Y", gmtime(self.data)))
 
             elif (formatoption == 3):
-                print(strftime("%d %m %y", gmtime(self.data)))
+                print(strftime("%d/%m/%y", gmtime(self.data)))
 
             elif (formatoption == 4):
-                print(strftime("%d %m %Y", gmtime(self.data)))
+                print(strftime("%d/%m/%Y", gmtime(self.data)))
 
             elif (formatoption == 5):
                 print(strftime("%b %d %Y", gmtime(self.data)))
