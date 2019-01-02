@@ -35,11 +35,11 @@ class Date:
 
     def update(self):
         if (response == 0):
-            print("default time is :", time.ctime())
+            print("default date is :", time.ctime())
 
         elif (response == 1):
             data = int(input("Enter your time in seconds"))
-            print("default time is :", time.ctime(data))
+            print("your date based on the value supplied :", time.ctime(data))
 
         else:
             print("Your response should be eithern 0 or 1")
